@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SpeedType</title>
+    <link href="https://fonts.googleapis.com/css2?family=Gulzar&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script.js"></script>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+            color: black;
+            background: url('img/bg_image.webp');
+            /* height: 1245px; */
+            background-repeat: no-repeat;
+            /* background-size: 1900px; */
+            font-family: 'Gulzar', serif;
+        }
+
+        .left {
+            display: inline-block;
+            position: absolute;
+            top: 30px;
+            left: 34px;
+            /* border: 2px solid red; */
+        }
+
+        .mid {
+            display: block;
+            width: 50%;
+            margin: 15px auto;
+            /* border: 2px solid green; */
+
+        }
+
+        .right {
+            position: absolute;
+            right: 34px;
+            top: 40px;
+            display: inline-block;
+            /* border: 2px solid yellow;  */
+        }
+
+        .left img {
+            width: 145px;
+        }
+
+        .left div {
+            text-align: center;
+        }
+
+        .left div.text {
+            position: absolute;
+            top: 80px;
+            left: -2px;
+            font-size: 22px;
+            color: blueviolet;
+            font-weight: bold;
+        }
+
+        .navbar {
+            display: inline-block;
+        }
+
+        .navbar li {
+            display: inline-block;
+            font-size: 28px;
+        }
+
+        .navbar li a {
+            color: #67e8f9;
+            text-decoration: none;
+            padding: 34px 25px;
+        }
+
+        .navbar li a:hover {
+            color: #8994de;
+            /* text-decoration: underline; */
+        }
+
+        .navbar li a.active {
+            color: #984ed9;
+        }
+
+        .btn {
+            margin: 0px 10px;
+            background-color: #7e4edf;
+            color: black;
+            padding: 3px 4px;
+            /*to do this */
+            border: 2px solid #70b7c6;
+            border-radius: 3px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #b59dd5;
+            border: 2px solid #99f6e4;
+        }
+
+        .quote-display {
+            position: absolute;
+            width: 60vw;
+            height: 50vh;
+            top: 250px;
+            left: 77px;
+            background-image: url("img/typing_img.png");
+            border-radius: 20px;
+            font-size: 25px;
+            padding: 5px 15px;
+            color: #390326;
+            text-align: center;
+            box-shadow: 5px 5px 18px white;
+        }
+
+        .quote-input {
+            position: absolute;
+            border: 2px solid black;
+            width: 56vw;
+            height: 25vh;
+            background-color: white;
+            top: 380px;
+            left: 111px;
+            border-radius: 15px;
+            resize: none;
+        }
+
+        ._btn {
+            position: absolute;
+            top: 605px;
+            left: 412px;
+            background-color: #fe9610;
+            border-radius: 10px;
+            margin: 7px;
+            padding: 9px;
+            cursor: pointer;
+        }
+
+        ._btn:hover {
+            background-color: #e38305;
+        }
+
+        .btn_su {
+            position: absolute;
+            top: 605px;
+            left: 520px;
+            background-color: rgba(88, 178, 255, 1);
+            border-radius: 10px;
+            margin: 7px;
+            padding: 9px;
+            cursor: pointer;
+        }
+
+        .btn_su:hover {
+            background-color: rgba(2, 128, 237, 1);
+        }
+
+        section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+            text-decoration: underline;
+        }
+
+        .timer {
+            position: absolute;
+            top: 45px;
+            font-size: 28px;
+            color: black;
+            font-weight: bold;
+        }
+
+        nav {
+            position: absolute;
+            background-image: url("img/typing_img.png");
+            margin: 2px;
+            padding: 10px;
+            top: 350px;
+            right: 80px;
+            color: black;
+            font-weight: bold;
+            text-align: left;
+            width: 20vw;
+            height: 30vh;
+            font-size: 23px;
+            border-radius: 8px;
+        }
+
+        /* .footer{
+            display: flex;
+            color: white;
+            font-weight: bold;
+            justify-content: center;
+            font-size: 15px;
+            align-items: center;
+        } */
+    </style>
+
+</head>
+
+<body>
+    <header class="header">
+        <div class="left">
+            <img src="img/logof-removebg-preview (1).png" alt="">
+            <div class="text">SpeedType.com</div>
+        </div>
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#">Home</a></li>
+                <li><a href="#" class="active">Typing Test</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </div>
+        <div class="right">
+            <button class="btn">Call Us Now</button>
+            <button class="btn">Email Us</button>
+        </div>
+    </header>
+    <section>
+        <nav>
+            Time :
+            <div id="timer" class="timer">
+            </div><br><br>
+            Speed (Chars per Minute):
+            <div id="speed" class="speed">
+            </div>
+        </nav>
+        <div class="container">
+            <div class="quote-display" id="quoteDisplay"></div>
+            <textarea id="quoteInput" class="quote-input" autofocus></textarea>
+            <button class="_btn" onclick="renderNewQuote()">RESET</button>
+            <button class="btn_su" onclick="startTimer()">START</button>
+        </div>
+    </section>
+    <!-- <footer class="footer">
+
+    </footer> -->
+    <script>
+        const RANDOM_QUOTE_API_URL = 'http://api.quotable.io/random'
+        const quoteDisplayElement = document.getElementById('quoteDisplay')
+        const quoteInputElement = document.getElementById('quoteInput')
+        const timerElement = document.getElementById('timer')
+        const speedElement = document.getElementById('speed')
+        let n = 0;
+
+        quoteInputElement.addEventListener('input', () => {
+            const arrayQuote = quoteDisplayElement.querySelectorAll('span')
+            const arrayValue = quoteInputElement.value.split('')
+
+            let correct = true
+            arrayQuote.forEach((characterSpan, index) => {
+                const character = arrayValue[index]
+                if (character == null) {
+                    characterSpan.classList.remove('correct')
+                    characterSpan.classList.remove('incorrect')
+                    correct = false
+                } else if (character === characterSpan.innerText) {
+                    characterSpan.classList.add('correct')
+                    characterSpan.classList.remove('incorrect')
+                } else {
+                    characterSpan.classList.remove('correct')
+                    characterSpan.classList.add('incorrect')
+                    correct = false
+                }
+                n = n + 1;
+            })
+
+            if (correct) renderNewQuote()
+        })
+
+        function getRandomQuote() {
+            return fetch(RANDOM_QUOTE_API_URL)
+                .then(response => response.json())
+                .then(data => data.content)
+        }
+
+        async function renderNewQuote() {
+            const quote = await getRandomQuote()
+            quoteDisplayElement.innerHTML = ''
+            quote.split('').forEach(character => {
+                const characterSpan = document.createElement('span')
+                characterSpan.innerText = character
+                quoteDisplayElement.appendChild(characterSpan)
+            })
+            quoteInputElement.value = null
+        }
+
+        let startTime
+        function startTimer() {
+            timerElement.innerText = 0
+            startTime = new Date()
+            setInterval(() => {
+                timer.innerText = getTimerTime()
+                let minTime = (getTimerTime() / 60)
+                speedElement.innerText = Math.trunc(n / minTime)
+            }, 1000)
+        }
+
+        function getTimerTime() {
+            return Math.floor((new Date() - startTime) / 1000)
+        }
+
+        renderNewQuote()
+    </script>
+</body>
+
+</html>
